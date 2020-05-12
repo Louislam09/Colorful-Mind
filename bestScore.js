@@ -7,7 +7,6 @@ function saveScore(score) {
 
 function getScore() {
 	let scoreStored = localStorage.getItem('bestScore');
-
 	if (scoreStored === null) {
 		scoreStored = 0;
 	} else {
