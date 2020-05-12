@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorfulMind</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="bestScore.js" defer></script>
+    <script src="fuzzy.js" defer></script>
+</head>
+
+<body>
+    <h1 class="title">Colorful<span>Mind</span></h1>
+    <div class="container">
+        <div class="difficulty">
+            <input type="radio" name='r' id="easy" checked>
+            <input type="radio" name='r' id="hard">
+            <input type="checkbox" name='fr' id="fr">
+            <span>Modo:</span>
+            <label for="easy" class="easy">Easy</label>
+            <label for="hard" class="hard">Hard</label>
+            <label for="fr" class="fr">FR</label>
+        </div>
+        <div class="game-section">
+            <div class="time-container">
+                <div class="time-value"></div>
+                <div class="score"></div>
+                <div class="tries"></div>
+            </div>
+            <div class="instruction">
+                <span>Si el color y la palabra coinciden, presiona el boton de <i data-icon="✅">correcto</i> de
+                    lo
+                    contrario
+                    <i data-icon="❌">incorrecto.</i>
+                </span>
+            </div>
+            <div class="word"></div>
+            <div class="best-score"></div>
+        </div>
+        <div class="button-section">
+            <button class='play-button'>PLAY</button>
+            <button class='restart-button'>RESTART</button>
+            <button class='incorrect-button'>❌</button>
+            <button class='correct-button'>✅</button>
+
+        </div>
+
+    </div>
+    <span class="autor">Made with ❤️ by Lam09 </span>
+
+</body>
+
+</html>
