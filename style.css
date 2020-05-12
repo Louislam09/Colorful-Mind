@@ -1,298 +1,301 @@
-html {
-	margin: 0;
-	padding: 0;
-	zoom: 90%;
-}
-body {
-	background: repeating-radial-gradient(#053046, #090118);
-	user-select: none;
-}
 
-.title {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-}
-
-.title > span {
-	background: white;
-	color: red;
-	border: 4px solid #800000ec;
-	border-radius: 15px;
-	padding: 0px 4px;
-	animation: title 5s infinite;
-}
-
-.container {
-	position: absolute;
-	width: 400px;
-	height: 400px;
-	background: rgba(255, 255, 255, 0.445);
-	transform: translate(-50%, -50%);
-	left: 50%;
-	top: 40%;
-	border-radius: 15px;
-	border: 2px solid #053046;
-}
-.difficulty > label {
-	position: absolute;
-	color: white;
-	font-size: 25px;
-}
-.difficulty > span {
-	position: absolute;
-	color: white;
-	font-size: 25px;
-	margin-left: 15px;
-}
-
-.difficulty > label::before {
-	position: absolute;
-	display: block;
-	content: "";
-	right: 110%;
-	top: 10%;
-	width: 20px;
-	height: 20px;
-	background-color: white;
-	border: 1px solid #053046;
-	border-radius: 5px;
-	transition: .4s;
-}
-
-.difficulty .easy {
-	left: 30%;
-}
-
-.difficulty .hard {
-	left: 60%;
-}
-.difficulty .fr {
-	left: 90%;
-}
-input {
-	display: none;
-}
-
-#easy:checked ~ .easy::before,
-#hard:checked ~ .hard::before,
-#fr:checked ~ .fr::before {
-	background-color: #d0dee6;
-	content: "✔️";
-	font-size: large;
-	border: 3px solid #053046;
-}
-
-.game-section {
-	position: relative;
-	width: 300px;
-	height: 200px;
-	background: #ffffff62;
-	transform: translateX(-50%);
-	padding: 10px 10px;
-
-	top: 10%;
-	left: 50%;
-	border-radius: 15px;
-	border: 2px solid #053046;
-}
-.game-section > .instruction {
-	position: relative;
-	width: 300px;
-	height: 200px;
-	font-weight: bolder;
-	color: white;
-	text-align: start;
-	border-radius: 15px;
-	font-size: 1.9em;
-	z-index: 11;
-}
-i {
-	border-radius: 15px;
-	padding: 0px 16px;
-	color: white;
-}
-i[data-icon='✅'] {
-	background-color: #008026f3;
-}
-i[data-icon='❌'] {
-	background-color: #800000ec;
-}
-
-.time-container {
-	position: absolute;
-	bottom: 105%;
-	left: 6%;
-	width: 250px;
-	height: 15px;
-	background-color: white;
-	border: 3px solid #053046;
-	border-radius: 50px;
-	z-index: 11;
-}
-.time-container .time-value {
-	position: absolute;
-	width: 100%;
-	height: 10px;
-	background-color: #008026f3;
-	margin: 2px 4px;
-	border-radius: 50px;
-	z-index: 11;
-}
-.time-container .score {
-	position: absolute;
-	width: fit-content;
-	top: 170%;
-	left: -10%;
-	font-size: 2em;
-	color: white;
-	background: repeating-radial-gradient(#053046, #090118);
-	border-radius: 5px;
-	border: 2px solid #053046;
-	padding: 0px 5px;
-	z-index: 11;
-}
-.time-container .tries {
-	position: absolute;
-	width: fit-content;
-	top: 170%;
-	left: 60%;
-	font-size: 2em;
-	color: white;
-	background: repeating-radial-gradient(#053046, #090118);
-	border-radius: 5px;
-	border: 2px solid #053046;
-	padding: 0px 5px;
-	z-index: 11;
-}
-
-.game-section > .word {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: red;
-	font-size: 3em;
-	background: #a6cde065;
-	border-radius: 15px;
-	padding: 10px;
-	visibility: hidden;
-}
-.game-section > .best-score {
-	position: absolute;
-	width: 90%;
-	top: 80%;
-	left: 2%;
-	font-size: 2em;
-	text-align: center;
-	color: white;
-	background: repeating-radial-gradient(#053046, #090118);
-	border-radius: 5px;
-	border: 2px solid #053046;
-	padding: 0px 5px;
-	z-index: 11;
-}
-
-.game-section > .word::after {
-	position: absolute;
-	display: block;
-	content: "";
-	left: 110%;
-	top: 20%;
-	width: 40px;
-	height: 40px;
-	background-color: white;
-	border: 1px solid #053046;
-	border-radius: 5px;
-	transition: .1s;
-}
-.game-section > .correct-word::after {
-	background-color: #d0dee6;
-	content: "✔️";
-	font-size: .6em;
-	border: 3px solid #069452;
-}
-.game-section > .incorrect-word::after {
-	background-color: #d0dee6;
-	content: "❌";
-	font-size: .6em;
-	border: 3px solid #800000ec;
-}
-.game-section > .hiddenPseudo::after {
-	visibility: hidden;
-}
-
-.container .button-section {
-	position: absolute;
-	bottom: 15%;
-	width: 100%;
-}
-
-.container button {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	font-size: 3em;
-	outline: none;
-	border: 2px solid #053046;
-}
-
-.button-section .play-button {
-	position: absolute;
-	width: fit-content;
-	border-radius: 15px;
-	margin: 5px 25%;
-	bottom: -50px;
-	padding: 0px 50px;
-	background: repeating-radial-gradient(#053046, #090118);
-	color: white;
-}
-.button-section .restart-button {
-	position: absolute;
-	width: fit-content;
-	border-radius: 15px;
-	margin: 5px 20%;
-	bottom: -50px;
-	padding: 0px 10px;
-	background: repeating-radial-gradient(#080bd6, #069452);
-	color: white;
-	visibility: hidden;
-}
-
-.button-section .incorrect-button {
-	position: absolute;
-	left: 65%;
-	bottom: -50px;
-	background-color: #800000ec;
-	visibility: hidden;
-}
-
-.button-section .correct-button {
-	position: absolute;
-	left: 10%;
-	bottom: -50px;
-	background-color: #008026f3;
-	visibility: hidden;
-}
-
-.autor {
-	position: fixed;
-	bottom: 1%;
-	right: 1%;
-	background-color: rgba(255, 0, 21, 0.678);
-	color: white;
-	padding: 10px;
-	font-weight: bolder;
-}
-
-@keyframes title {
-	to {
-		background: white;
-		filter: hue-rotate(0deg);
-	}
-	from {
-		background: white;
-		filter: hue-rotate(3600deg);
-	}
+html { 
+ margin: 0; 
+ padding: 0; 
+ zoom: 90%; 
+} 
+body { 
+ background: repeating-radial-gradient(#053046, #090118); 
+ user-select: none; 
+} 
+ 
+.title { 
+ position: absolute; 
+ left: 50%;
+ margin-bottom: 10px; 
+ transform: translate(-50%, -50%); 
+ color: white;
+  
+} 
+ 
+.title > span { 
+ background: white; 
+ color: red; 
+ border: 4px solid #800000ec; 
+ border-radius: 15px; 
+ padding: 0px 4px; 
+ animation: title 5s infinite; 
+} 
+ 
+.container { 
+ position: absolute; 
+ width: 400px; 
+ height: 400px; 
+ background: rgba(255, 255, 255, 0.445); 
+ transform: translate(-50%, -50%); 
+ left: 50%; 
+ top: 50%; 
+ border-radius: 15px; 
+ border: 2px solid #053046; 
+} 
+.difficulty > label { 
+ position: absolute; 
+ color: white; 
+ font-size: 25px; 
+} 
+.difficulty > span { 
+ position: absolute; 
+ color: white; 
+ font-size: 25px; 
+ margin-left: 15px; 
+} 
+ 
+.difficulty > label::before { 
+ position: absolute; 
+ display: block; 
+ content: ""; 
+ right: 110%; 
+ top: 10%; 
+ width: 20px; 
+ height: 20px; 
+ background-color: white; 
+ border: 1px solid #053046; 
+ border-radius: 5px; 
+ transition: .4s; 
+} 
+ 
+.difficulty .easy { 
+ left: 30%; 
+} 
+ 
+.difficulty .hard { 
+ left: 60%; 
+} 
+.difficulty .fr { 
+ left: 90%; 
+} 
+input { 
+ display: none; 
+} 
+ 
+#easy:checked ~ .easy::before, 
+#hard:checked ~ .hard::before, 
+#fr:checked ~ .fr::before { 
+ background-color: #d0dee6; 
+ content: "✔️"; 
+ font-size: large; 
+ border: 3px solid #053046; 
+} 
+ 
+.game-section { 
+ position: relative; 
+ width: 300px; 
+ height: 200px; 
+ background: #ffffff62; 
+ transform: translateX(-50%); 
+ padding: 10px 10px; 
+ 
+ top: 10%; 
+ left: 50%; 
+ border-radius: 15px; 
+ border: 2px solid #053046; 
+} 
+.game-section > .instruction { 
+ position: relative; 
+ width: 300px; 
+ height: 200px; 
+ font-weight: bolder; 
+ color: white; 
+ text-align: start; 
+ border-radius: 15px; 
+ font-size: 1.5em; 
+ z-index: 11; 
+} 
+i { 
+ border-radius: 15px; 
+ padding: 0px 16px; 
+ color: white; 
+} 
+i[data-icon='✅'] { 
+ background-color: #008026f3; 
+} 
+i[data-icon='❌'] { 
+ background-color: #800000ec; 
+} 
+ 
+.time-container { 
+ position: absolute; 
+ bottom: 105%; 
+ left: 6%; 
+ width: 250px; 
+ height: 15px; 
+ background-color: white; 
+ border: 3px solid #053046; 
+ border-radius: 50px; 
+ z-index: 11; 
+} 
+.time-container .time-value { 
+ position: absolute; 
+ width: 100%; 
+ height: 10px; 
+ background-color: #008026f3; 
+ margin: 2px 4px; 
+ border-radius: 50px; 
+ z-index: 11; 
+} 
+.time-container .score { 
+ position: absolute; 
+ width: fit-content; 
+ top: 170%; 
+ left: -10%; 
+ font-size: 2em; 
+ color: white; 
+ background: repeating-radial-gradient(#053046, #090118); 
+ border-radius: 5px; 
+ border: 2px solid #053046; 
+ padding: 0px 5px; 
+ z-index: 11; 
+} 
+.time-container .tries { 
+ position: absolute; 
+ width: fit-content; 
+ top: 170%; 
+ left: 60%; 
+ font-size: 2em; 
+ color: white; 
+ background: repeating-radial-gradient(#053046, #090118); 
+ border-radius: 5px; 
+ border: 2px solid #053046; 
+ padding: 0px 5px; 
+ z-index: 11; 
+} 
+ 
+.game-section > .word { 
+ position: absolute; 
+ top: 50%; 
+ left: 50%; 
+ transform: translate(-50%, -50%); 
+ color: red; 
+ font-size: 3em; 
+ background: #a6cde065; 
+ border-radius: 15px; 
+ padding: 10px; 
+ visibility: hidden; 
+} 
+.game-section > .best-score { 
+ position: absolute; 
+ width: 90%; 
+ top: 80%; 
+ left: 2%; 
+ font-size: 2em; 
+ text-align: center; 
+ color: white; 
+ background: repeating-radial-gradient(#053046, #090118); 
+ border-radius: 5px; 
+ border: 2px solid #053046; 
+ padding: 0px 5px; 
+ z-index: 11; 
+} 
+ 
+.game-section > .word::after { 
+ position: absolute; 
+ display: block; 
+ content: ""; 
+ left: 110%; 
+ top: 20%; 
+ width: 40px; 
+ height: 40px; 
+ background-color: white; 
+ border: 1px solid #053046; 
+ border-radius: 5px; 
+ transition: .1s; 
+} 
+.game-section > .correct-word::after { 
+ background-color: #d0dee6; 
+ content: "✔️"; 
+ font-size: .6em; 
+ border: 3px solid #069452; 
+} 
+.game-section > .incorrect-word::after { 
+ background-color: #d0dee6; 
+ content: "❌"; 
+ font-size: .6em; 
+ border: 3px solid #800000ec; 
+} 
+.game-section > .hiddenPseudo::after { 
+ visibility: hidden; 
+} 
+ 
+.container .button-section { 
+ position: absolute; 
+ bottom: 15%; 
+ width: 100%; 
+} 
+ 
+.container button { 
+ width: 100px; 
+ height: 100px; 
+ border-radius: 50%; 
+ font-size: 3em; 
+ outline: none; 
+ border: 2px solid #053046; 
+} 
+ 
+.button-section .play-button { 
+ position: absolute; 
+ width: fit-content; 
+ border-radius: 15px; 
+ margin: 5px 25%; 
+ bottom: -50px; 
+ padding: 0px 50px; 
+ background: repeating-radial-gradient(#053046, #090118); 
+ color: white; 
+} 
+.button-section .restart-button { 
+ position: absolute; 
+ width: fit-content; 
+ border-radius: 15px; 
+ margin: 5px 20%; 
+ bottom: -50px; 
+ padding: 0px 10px; 
+ background: repeating-radial-gradient(#080bd6, #069452); 
+ color: white; 
+ visibility: hidden; 
+} 
+ 
+.button-section .incorrect-button { 
+ position: absolute; 
+ left: 65%; 
+ bottom: -50px; 
+ background-color: #800000ec; 
+ visibility: hidden; 
+} 
+ 
+.button-section .correct-button { 
+ position: absolute; 
+ left: 10%; 
+ bottom: -50px; 
+ background-color: #008026f3; 
+ visibility: hidden; 
+} 
+ 
+.autor { 
+ position: fixed; 
+ bottom: 1%; 
+ right: 1%; 
+ background-color: rgba(255, 0, 21, 0.678); 
+ color: white; 
+ padding: 10px; 
+ font-weight: bolder; 
+} 
+ 
+@keyframes title { 
+ to { 
+  background: white; 
+  filter: hue-rotate(0deg); 
+ } 
+ from { 
+  background: white; 
+  filter: hue-rotate(3600deg); 
+ } 
 }
