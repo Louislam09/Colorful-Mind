@@ -240,7 +240,10 @@ i[data-icon='❌'] {
  outline: none; 
  border: 2px solid #053046; 
 } 
- 
+.container button:hover{
+ border: 4px solid #ddd;
+}
+
 .button-section .play-button { 
  position: absolute; 
  width: fit-content; 
