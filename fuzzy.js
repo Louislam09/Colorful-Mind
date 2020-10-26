@@ -86,9 +86,11 @@ function checkCorrect() {
 		incorrectSound.currentTime = 0;
 		incorrectSound.play();
 	}
+	correctButton.classList.add('current-pressed');
 	setTimeout(() => {
 		if (wordDiv.classList.contains('correct-word')) wordDiv.classList.remove('correct-word');
 		if (wordDiv.classList.contains('incorrect-word')) wordDiv.classList.remove('incorrect-word');
+		correctButton.classList.remove('current-pressed');
 
 		assignWord();
 	}, 500);
@@ -109,9 +111,13 @@ function checkIncorrect() {
 		incorrectSound.currentTime = 0;
 		incorrectSound.play();
 	}
+
+	incorrectButton.classList.add('current-pressed');
+
 	setTimeout(() => {
 		if (wordDiv.classList.contains('correct-word')) wordDiv.classList.remove('correct-word');
 		if (wordDiv.classList.contains('incorrect-word')) wordDiv.classList.remove('incorrect-word');
+		incorrectButton.classList.remove('current-pressed');
 
 		assignWord();
 	}, 500);
